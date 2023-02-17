@@ -303,7 +303,11 @@ class IntensifyImageDelegate {
     }
 
     public float getScale() {
-        return 1f * mImageArea.width() / mImage.mImageWidth;
+        if (mImage == null) {
+            return 1;
+        } else {
+            return 1f * mImageArea.width() / mImage.mImageWidth;
+        }
     }
 
     public float getBaseScale() {
